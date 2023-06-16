@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg24591"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   sodipodi:docname="ikisource - logo circulaire.svg"
+   inkscape:export-filename="ikisource - logo circulaire.png"
+   inkscape:export-xdpi="171.03999"
+   inkscape:export-ydpi="171.03999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview24593"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="6.1575758"
+     inkscape:cx="280.46752"
+     inkscape:cy="254.32086"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g821">
+    <inkscape:grid
+       type="xygrid"
+       id="grid25104" />
+  </sodipodi:namedview>
+  <defs
+     id="defs24588">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient49625">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:0;"
+         offset="0"
+         id="stop49623" />
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0.22637835"
+         id="stop49621" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient49625"
+       id="linearGradient49627"
+       x1="71.67882"
+       y1="61.834182"
+       x2="82.5133"
+       y2="61.834182"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter78607"
+       x="-0.0055555556"
+       y="-0.0055555556"
+       width="1.0111111"
+       height="1.0111111">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix78605" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter78611"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix78609" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter78615"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix78613" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g821"
+       inkscape:export-filename="ikisource - logo circulaire.png"
+       inkscape:export-xdpi="171.03999"
+       inkscape:export-ydpi="171.03999">
+      <g
+         id="g1035"
+         inkscape:export-filename="ikisource - logo circulaire 500x500.png"
+         inkscape:export-xdpi="697.80237"
+         inkscape:export-ydpi="697.80237">
+        <circle
+           style="fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#ff6600;stroke-width:0.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path119748-5-4-7-3"
+           cx="77.367714"
+           cy="65.164001"
+           r="9"
+           inkscape:export-filename="logo-ikisource.png"
+           inkscape:export-xdpi="171.03999"
+           inkscape:export-ydpi="171.03999" />
+        <text
+           xml:space="preserve"
+           style="font-size:4.23333px;fill:#ffffff;fill-opacity:1;stroke-width:4;stroke-dasharray:none"
+           x="70.973282"
+           y="69.152252"
+           id="text9219-3-7-7-9-3-2"><tspan
+             sodipodi:role="line"
+             id="tspan9217-2-9-8-9-5-9"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';fill:#ffffff;fill-opacity:1;stroke-width:4"
+             x="70.973282"
+             y="69.152252">source</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff6600;fill-opacity:1;stroke-width:3.99994;stroke-dasharray:none"
+           x="71.25972"
+           y="65.539055"
+           id="text9215-8-3-6-8-4-2-0-7-5-0-1"><tspan
+             sodipodi:role="line"
+             id="tspan17103-9-7-5-7-1-4-1-4-9-8-2"
+             x="71.25972"
+             y="65.539055"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';fill:#ff6600;fill-opacity:1;stroke-width:3.99994">iki</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:#808080;stroke-width:3.47901"
+       x="91.810417"
+       y="69.849998"
+       id="text407"><tspan
+         sodipodi:role="line"
+         id="tspan405"
+         style="stroke-width:3.479" /></text>
+  </g>
+</svg>
