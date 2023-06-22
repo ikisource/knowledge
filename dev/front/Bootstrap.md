@@ -161,3 +161,12 @@ Pour créer des designs complexes, on va également pouvoir imbriquer des lignes
 Pour faire cela, il va suffire d’ajouter un ou plusieurs éléments avec des classes `.row` comme enfant direct d’un élément portant une classe de type `.col-*`. 
 
 ### Sélecteurs éléments et sélecteurs de classes
+Pour utiliser Bootstrap de manière optimale, il faut avant tout bien comprendre que le CSS défini dans ce framework peut être divisé en deux parties distinctes : une partie « sélecteurs de classe » et une partie « sélecteur d’éléments ».
+
+La partie « sélecteurs d’éléments » se base sur un fichier nommé Reboot qui est lui-même inspiré d’un autre fichier nommé Normalize.
+L’intention derrière ce fichier est de normaliser le comportement de certains éléments HTML en leur appliquant des styles de base afin d’avoir un comportement cohérent d’un navigateur à l’autre.
+Les styles définis via les sélecteurs éléments sont automatiquement appliqués à nos éléments dès qu’on utilise Bootstrap.
+
+La partie « sélecteurs de classes » définit un ensemble de classes qu’on va pouvoir utiliser pour styliser notre contenu HTML, en incluant les attributs class HTML relatifs aux sélecteurs associés.
+Les styles liés à un sélecteur de classe ne sont appliqués à un élément que si on décide d’ajouter un attribut class de même nom à cet élément.
+
