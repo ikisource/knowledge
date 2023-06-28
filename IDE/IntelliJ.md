@@ -6,3 +6,6 @@ File > Settings > Build,Execution,Deployment > Build Tools > Maven => cocher "Al
 ## Couverture de code
 Utiliser le plugin *Code Coverage for Java*
 
+## Ajouter un raccourci
+Settings > Appearance and Behavior > Menus and Toolbars : select Main Toolobar Center and add the shortcut
+
