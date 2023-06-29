@@ -36,7 +36,18 @@ Supprimer la branche distante `fixbug`
 git push origin --delete fixbug
 ```
 
-Annuler un merge
+# Merge
+
+## Merge
+merge de `br1` sur `main`
+```
+git checkout main
+git pull
+git merge br1
+```
+ 
+
+## Annuler un merge
 
 ```
 git merge –abort
@@ -86,7 +97,9 @@ git checkout -- file.txt
 
 ## pull et fetch
 
-La commande git fetch va récupérer toutes les données des commits effectués sur la branche courante qui n'existent pas encore dans votre version en local. Ces données seront stockées dans le répertoire de travail local mais ne seront pas fusionnées avec votre branche locale. Si vous souhaitez fusionner ces données pour que votre branche soit à jour, vous devez utiliser ensuite la commande git merge.
+La commande git fetch va récupérer toutes les données des commits effectués sur la branche courante qui n'existent pas encore dans votre version en local.
+Ces données seront stockées dans le répertoire de travail local mais ne seront pas fusionnées avec votre branche locale.
+Si vous souhaitez fusionner ces données pour que votre branche soit à jour, vous devez utiliser ensuite la commande git merge.
 
 git pull = git fetch + git merge
 
@@ -97,9 +110,9 @@ git pull = git fetch + git merge
 
 [Introduction à GIT](https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-git/)
 
+Maîtrisez le développement collaboratif de logiciel avec Git https://gitlab.rennes.ariadnext.com/Doc-Control/icheckit4u-server-backend/-/pipelines
 
-
-
+https://git-scm.com/docs/git-merge
 
 
 
