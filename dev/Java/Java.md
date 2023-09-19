@@ -52,6 +52,37 @@ public class Person {
 	}
 }
 ```
+## Program argument, VM argument, Environment variable
+Program arguments are arguments passed to your program and available in the args array of your main method  
+```public static void main(String[] args)```
+
+VM arguments are passed to the virtual machine and are designed to instruct the VM to do something.
+You can do things like control the heap size, etc.
+They can be accessed by your program via a call to ```System.getProperty()```
+
+Environment variable is a key value pair provided by the operating system to the program
+They can be accessed by your program via a call to ```System.getEnv()```
+
+```
+envvar1=val1 java -jar -Dsysprop1=val2 HelloWorld-1.0-SNAPSHOT.jar arg1
+```
+
+```
+public class Hello {
+
+	public static void main(String[] args) {
+		System.out.println("Environment Variable envvar1 is: " + System.getenv("envvar1"));
+		System.out.println("System property sysprop1 is: " + System.getProperty("sysprop1"));
+		if (args != null && args.length > 0) {
+			System.out.println("Command line arguments are: ");
+			for (String arg : args) {
+				System.out.println(arg);
+			}
+		}
+	}
+}
+```
+![](images/Env-VM-App properties.png)
 
 ## StackWalker
 
