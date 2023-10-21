@@ -38,8 +38,8 @@ create a customer : POST /customer/create❌ POST /customers ✅
 delete a customer : POST /customer/1/delete ❌ DELETE /customers/1 ✅  
 
 ## Method
-Idempotent : idempotent methods can modify data at the first call. The next calls will have no effects on data and response remains the same.  
-Sure : methods don't modify data on the server
+Idempotent : idempotent method can modify data at the first call. The next calls will have no effects on data and response remains the same.  
+Sure : method don't modify data on the server
 
 ## Create a resource
 Idempotent ❌, Sure ❌  
@@ -81,7 +81,42 @@ BODY: {"name"="customer1-updated"}
 Response  
 Code: 204 No Content
 
+## Status code
+
+Use HTTP standard codes for the responses
+
+- 200 OK
+- 201 Created : a new resource has been created
+- 204 No Content : update, patch, delete a resource
+- 400 Bad Request : client-side input fails
+- 401 Unauthorized : user has not been properly authenticated
+- 429 Too Many Requests : the maximum number of requests has been reached
+- 403 Forbidden : user is authenticated but is not allowed to access the resource
+- 404 Not Found : resource is not found
+- 500 Internal server error : for some reason the server could not process the request due to an error
+- 502 Bad Gateway
+- 503 Service Unavailable
+
+
 ## HATEOAS
+
+### One entry point
+
+GET /api
+```
+{
+  "links": [
+    {
+      "rel": "customers",
+      "href": "/customers"
+    },
+    {
+      "rel": "orders",
+      "href": "/orders"
+    }
+  ]
+}
+```
 
 ```
 {
@@ -123,8 +158,5 @@ Code: 204 No Content
   ]
 }
 ```
-
-
-
 
 
