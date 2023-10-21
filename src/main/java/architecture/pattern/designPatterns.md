@@ -1,6 +1,6 @@
 # Patrons de conception ou design patterns
 
-# Principes SOLID
+# Principles SOLID
 
 ### Responsabilité unique (Single responsibility principle)
 Une classe, une fonction ou une méthode doit avoir une et une seule responsabilité.
