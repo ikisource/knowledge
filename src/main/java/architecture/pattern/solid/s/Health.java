@@ -2,7 +2,13 @@ package architecture.pattern.solid.s;
 
 public class Health {
 
-	static int imc(int size, int weigth) {
-		return weigth / (size * size);
-	}
+    private Person person;
+
+    public int imc() {
+        return person.getWeigth() / (person.getSize() * person.getSize());
+    }
+
+    public Boolean isMassiveObese() {
+        return person.bmi() > 40;
+    }
 }
