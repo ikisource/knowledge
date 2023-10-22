@@ -52,6 +52,6 @@ public class Health {
 - low coupling
 - testability is better
 - readability is better
-- merges will have less conflicts
+- decrease conflict merges
 
 
