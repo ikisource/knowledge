@@ -61,7 +61,7 @@ Il existe deux cas de figure pour le merge
 Si les deux branches possèdent des commits propres, alors, git est obligé de faire un commit de merge pour avoir l’historique des deux branche.
 Donc, le commit de merge possède deux parents.
 
-![](/home/olivier/dev/knowledge/scm/git/merge.png)
+![](merge.png)
 
 merge de `develop` sur `master`
 ```
@@ -85,7 +85,7 @@ La branche reversée sera toujours présente dans l’historique et ainsi il ser
 Si l’historique entre les deux branches est linéaire, alors un simple fast-forward est appliqué.
 Cela signifie que la branche de destination va remonter les commits pour venir au même niveau que la branche à merger.
 Cela n’entraîne donc pas la création d’un commit de merge.
-![](/home/olivier/dev/knowledge/scm/git/fast-forward.png)
+![](fast-forward.png)
 
 ## Faire un rebase d’une branche
 
@@ -97,7 +97,7 @@ La commande git rebase permet de rebase une branche sur une autre. Cela consiste
 2. Utiliser la commande git rebase
 
 Attention: les deux branches doivent avoir au moins un commit en commun (ancêtre commun)
-![](/home/olivier/dev/knowledge/scm/git/rebase.png)
+![](rebase.png)
 
 rebase de la branche develop sur la branche master
 ```
@@ -111,7 +111,7 @@ On se retrouve alors avec la branche develop qui part de master mais depuis le c
 
 Le rebase d’une branche sur une autre amène les deux branches dans une situation de fast-forward.
 Il est alors possible de les merges sans faire de commit de merge.
-![](/home/olivier/dev/knowledge/scm/git/rebase fast-forward.png)
+![](rebase fast-forward.png)
 à la suite du rebase précédent, on souhaite merge develop dans master
 
     git checkout master
