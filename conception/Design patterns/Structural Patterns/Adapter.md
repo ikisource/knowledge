@@ -76,12 +76,9 @@ public class Client {
 
         Square square = new Square(5);
         rectangle = new Adapter(square);
-
+        
         System.out.println("Rectangle width = " + rectangle.getWidth());
         System.out.println("Rectangle height = " + rectangle.getHeight());
     }
-
 }
 ```
-
-
