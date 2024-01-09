@@ -180,6 +180,12 @@ git pull = git fetch + git merge
 git reset --hard <commit hash>
 ```
 
+## List the modified files with git log
+
+```
+git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head
+```
+
 ## Liens
 
 [git-scm](https://git-scm.com/book/fr/v2/Les-bases-de-Git-D%C3%A9marrer-un-d%C3%A9p%C3%B4t-Git)
