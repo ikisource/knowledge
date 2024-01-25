@@ -69,17 +69,20 @@ uuid_string : varchar(36)
 ### query in MySQL console
 select * from identification where id | uuid | uuid_string =
 
-1 268 309 rows
-id : 0.4187 ms
-uuid : 0.4754 ms
-uuid_string : 0.4906 ms
+1 268 309 rows in the table
+
 ![](/home/omathe/dev/knowledge/SGBD/images/id-uuid.png)
 
 ### Spring boot code (service layer)
 
-id : 3 ms
-uuid : 20 ms (6x id)
-uuid_string : 15 ms (5x id)
+id : 3 ms  
+uuid : 20 ms (7x)  
+uuid_string : 15 ms (5x)  
+
+## Conclusion
+Requests done directly in the MySQL console does not show big differences between the three types.  
+Using a Java Spring boot application shows a big difference of performance in favour of the bigint identifier.
+
 
 
 
