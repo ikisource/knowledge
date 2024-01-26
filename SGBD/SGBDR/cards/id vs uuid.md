@@ -67,11 +67,37 @@ uuid : binary(16)
 uuid_string : varchar(36)
 
 ### query in MySQL console
-select * from identification where id | uuid | uuid_string =
-
 1 268 309 rows in the table
 
-![](/home/omathe/dev/knowledge/SGBD/images/id-uuid.png)
+```
+SET profiling = 1;
+SET @@profiling_history_size = 100;
+```
+
+```
+select * from identification where id = 500000;
+show profiles;
+```
+- min : 56 µs
+- max : 479 µs
+- avg : 86 µs
+
+```
+select * from identification where uuid = 0x40E4C9EE6C71401184AA99762C072400;
+show profiles;
+```
+- min : 43 µs
+- max : 434 µs
+- avg : 75 µs
+
+```
+select * from identification where uuid_string = '40e4c9ee-6c71-4011-84aa-99762c072400';
+show profiles;
+```
+- min : 64 µs
+- max : 657 µs
+- avg : 117 µs
+
 
 ### Spring boot code (service layer)
 
