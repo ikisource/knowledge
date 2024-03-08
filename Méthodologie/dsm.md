@@ -1,16 +1,14 @@
 # Data Structure Matrix (DSM)
 
-- The column shows the dependencies of the selected row/component.
-- The row shows the dependencies on the selected row/component.
-- The green component depends on the yellow component
+- The column shows the dependencies of the selected row.
+- The row shows the dependencies on the selected row.
+- The green component depends on the yellow component.
 
 ![DSM example](images/DSM.png "DSM example")
 
-For example if we focus on the component **Person**
-- It has 11 + 7 + 2 components that depend on it. (all the green flags)
-- It depends on 1 component which is the component **PersonDataConverter** (the yellow flag)
-
-
+For example if we focus on the class **Person**
+- It depends on 1 class which is the class **PersonDataConverter** (the yellow flags, cell 1)
+- It has 3 classes that depend on it. (all the green flags, cells 11, 7 and 2)
 
 
 ## Links
