@@ -40,16 +40,29 @@ sudo docker run hello-world
 ```docker pull postgres```
 
 ## Pull a specific version of postgres
-```docker pull postgres:14.5```
+```
+docker pull postgres:14.5
+```
 
 ## Run postgres
-```docker run --name postgres -e POSTGRES_USER=javajpa -e POSTGRES_PASSWORD=javajpa -e POSTGRES_DB=javajpa -p 5455:5432 -d postgres```
+```
+docker run --name postgres -e POSTGRES_USER=javajpa -e POSTGRES_PASSWORD=javajpa -e POSTGRES_DB=javajpa -p 5455:5432 -d postgres
+```
 
-## enter docker instance of postgres
+## Enter a docker instance of postgres (id starts with d573)
+```
 docker exec -it d573 bash
+```
+
+## Exit from a docker instance
+```
+CTRL + d
+```
 
 ## Lancer postgres
+```
 psql -U postgres
+```
 
 ### create schema javajpa
 

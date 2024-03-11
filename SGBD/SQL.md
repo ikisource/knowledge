@@ -1,0 +1,8 @@
+# SQL
+
+## join
+
+## left join
+
+
+
