@@ -2,7 +2,7 @@
 
 - The column shows the dependencies of the selected row.
 - The row shows the dependencies on the selected row.
-- The green component depends on the yellow component.
+- The green row depends on the yellow row.
 
 ![DSM example](images/DSM.png "DSM example")
 
