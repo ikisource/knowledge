@@ -1,5 +1,24 @@
 # Java
 
+## Alternatives sous linux
+https://www.baeldung.com/linux/java-choose-default-version
+
+### Lister les versions de Java installées sur la machine
+```
+update-alternatives --list java
+/opt/java-21/bin/java
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+```
+### Sélectionner une version de Java
+```
+update-alternatives --config java
+* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      mode automatique
+  1            /opt/java-21/bin/java                         1         mode manuel
+  2            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      mode manuel
+  
+Appuyez sur <Entrée> pour conserver la valeur par défaut[*] ou choisissez le numéro sélectionné :
+```
+
 ### Surcharger une méthode
 La surcharge d’une méthode ou d’un constructeur permet de définir plusieurs fois une même méthode/constructeur avec des arguments différents.
 
