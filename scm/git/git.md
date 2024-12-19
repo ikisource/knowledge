@@ -188,6 +188,8 @@ git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head
 
 ## Liens
 
+conventional commit https://www.conventionalcommits.org/en/v1.0.0/
+
 [git-scm](https://git-scm.com/book/fr/v2/Les-bases-de-Git-D%C3%A9marrer-un-d%C3%A9p%C3%B4t-Git)
 
 [Introduction à GIT](https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-git/)

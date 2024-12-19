@@ -22,3 +22,4 @@ different ways to name sides :
 
 ## Links
 [Breizhcamp Video](https://www.youtube.com/watch?v=GG9WyeerqFA&list=PL9B1Qf4o9HXxLivhbz1JrZ-CMzNgiHlTr&index=7)
+[](https://thetribe.io/glossaire-architecture-hexagonale-clean-architecture/)
