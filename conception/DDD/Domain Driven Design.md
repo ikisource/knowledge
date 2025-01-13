@@ -3,11 +3,16 @@
 
 Un résumé de Domain Driven Design d’Eric Evans
 
-## Modèle
-- La première nécessité pour un modèle est qu’il soit cohérent, avec des termes fixés et aucune contradiction
-- Chaque modèle doit avoir une frontière clairement délimitée, et les liaisons entre modèles doivent être définies avec précision.
+## Domaine
+- La première nécessité pour le domaine est qu’il soit cohérent, avec des termes fixés et aucune contradiction.
+- Chaque domaine doit avoir une frontière clairement délimitée, et les liaisons entre domaines doivent être définies avec précision.
 
 ## Entité (Entity)
+Une entité est un objet du domaine qui possède une identité propre. Une entité est amenée à changer d'état dans le temps
+elle n'est donc pas immuable.
+
+Une entité ne doit pas être anémique c'est à dire constituée uniquement de ses propriétés et des ses accesseurs mais
+elle doit contenir des règles métier; il est d'ailleurs souhaitable de remplacer les setters par de véritables fonctions métier
 
 ## Objet valeur (Value Object)
 Une value type peut être transformée en Value Object (exemple : BigDecimal se transforme en la classe Amount)
