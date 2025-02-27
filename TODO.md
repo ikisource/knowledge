@@ -1,3 +1,6 @@
+# things to examine
+- Twitter snowflake ID
+
 # Circular Dependencies in Spring
 https://www.baeldung.com/circular-dependencies-in-spring
 
@@ -75,3 +78,4 @@ mindmap
       Pen and paper
       Mermaid
 ```
+

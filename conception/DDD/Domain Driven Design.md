@@ -44,11 +44,14 @@ L’Entrepôt est capable de conserver des références vers des objets.
   Cela demande du travail en plus et un effort de conception supplémentaire, et il y aura peut-être des traductions à faire entre les
   modèles.
 - Chaque Contexte borné doit avoir un nom qui fait partie du Langage omniprésent.
-- 
+
 ### Identifier les bounded context
-- un terme contenant la syllable 'tion' ou un 'ing' est candidat à un bounded context (exemple: réservation des place, tarification)
+- un terme contenant la syllable 'tion' ou un 'ing' est candidat à un bounded context (exemple: réservation des place, tarification, marketing)
 - Les Personae(exemples : Julie, marketing, direction, marketing) peuvent aider à identifer les bounded context
 - Les synonymes et termes à sens multiple peuvent également aider à identifer les bounded context
+Quand on nomme la même chose avec plusieurs noms c'est peut-être qu'il y a plusieurs contextes bornés
+- Terme à sens multiple : quand le même terme a plusieurs significations/définitions c'est peut-être qu'il y a plusieurs contextes bornés
+ex: une tomate est un légume en cuisine, un fruit en botanique et un retour dans le monde du théatre
 
 ## Spécifications
 
@@ -62,4 +65,27 @@ L’Entrepôt est capable de conserver des références vers des objets.
 ### Pattern stratégiques
 
 ### Pattern tactiques
+- Entity
+- Value object
+- Aggregate
+- Repository
+- Service
 
+### Repository
+Le pattern "Repository" est un modèle de conception (design pattern) utilisé en développement logiciel pour séparer
+la logique d'accès aux données de la logique métier d'une application. Il fait partie des patterns architecturaux
+
+Un repository est un object du domaine qui stocke des aggregates
+- Retrouver un aggregate : à partir de son identifiant ou d'autres critères
+- Sauvegarder un aggregate : mettre à jour le dépôt
+- Le repository est visible hors du domaine
+- Utilise le nommage ubiquitous language
+- Orienté collection
+- Gère les transactions (à valider)
+
+## Refactoring vers DDD
+- transformer les primitives (ou classe du JDK) en concept métier
+example : Amount plutôt que BigDecimal
+- pattern sandwich :mélange de technique et de métier
+
+# Domain Events
