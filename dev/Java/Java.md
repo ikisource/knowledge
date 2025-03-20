@@ -1,114 +1,129 @@
 # Java
 
-## Alternatives sous linux
-https://www.baeldung.com/linux/java-choose-default-version
+![Logo](images/Logo.jpg)
 
-### Lister les versions de Java installées sur la machine
-```
-update-alternatives --list java
-/opt/java-21/bin/java
-/usr/lib/jvm/java-11-openjdk-amd64/bin/java
-```
-### Sélectionner une version de Java
-```
-update-alternatives --config java
-* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      mode automatique
-  1            /opt/java-21/bin/java                         1         mode manuel
-  2            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      mode manuel
-  
-Appuyez sur <Entrée> pour conserver la valeur par défaut[*] ou choisissez le numéro sélectionné :
-```
+---
 
-### Surcharger une méthode
-La surcharge d’une méthode ou d’un constructeur permet de définir plusieurs fois une même méthode/constructeur avec des arguments différents.
+## Introduction
 
-## jshell
-REPL (READ EVALUATE PRINTL LOOP)
+### Historique et évolution de Java
 
-Exemple 1
+### Caractéristiques principales de Java
 
-```
-jshell> Integer.parseInt("20")
-$2 ==> 20
-```
-
-Exemple 2
-
-```
-jshell> Integer.parseInt("")
-|  Exception java.lang.NumberFormatException: For input string: ""
-|        at NumberFormatException.forInputString (NumberFormatException.java:68)
-|        at Integer.parseInt (Integer.java:662)
-|        at Integer.parseInt (Integer.java:770)
-|        at (#3:1)
-```
-
-## Initialisateur d'instance
-
-```
-public class Person {
-
-	private long dateCreation = System.currentTimeMillis();
-	private String nom;
-	private static Integer number;
-
-	{
-		// ceci est un bloc non statique  
-
-	}
-
-	static {
-		// ceci est un bloc statique  
-		number = 12;
-	}
-
-	public Person() {
-		this.nom = "indéfini";
-	}
-
-	public Person(String nom) {
-		this.nom = nom;
-	}
-}
-```
-## Program argument, VM argument, Environment variable
-Program arguments are arguments passed to your program and available in the args array of your main method  
-```public static void main(String[] args)```
-
-VM arguments are passed to the virtual machine and are designed to instruct the VM to do something.
-You can do things like control the heap size, etc.
-They can be accessed by your program via a call to ```System.getProperty()```
-
-Environment variable is a key value pair provided by the operating system to the program
-They can be accessed by your program via a call to ```System.getEnv()```
-
-```
-envvar1=val1 java -jar -Dsysprop1=val2 HelloWorld-1.0-SNAPSHOT.jar arg1
-```
-
-```
-public class Hello {
-
-	public static void main(String[] args) {
-		System.out.println("Environment Variable envvar1 is: " + System.getenv("envvar1"));
-		System.out.println("System property sysprop1 is: " + System.getProperty("sysprop1"));
-		if (args != null && args.length > 0) {
-			System.out.println("Command line arguments are: ");
-			for (String arg : args) {
-				System.out.println(arg);
-			}
-		}
-	}
-}
-```
-![](images/Env-VM-App properties.png)
-
-## StackWalker
-
-## ProcessHandle
-
-## Profiling
-VisualVM
+## Installation et configuration de l'environnement de développement (JDK, IDE)
 
 
+------------------------
 
+## Syntaxe de base et structures de contrôle
+
+### Variables et types de données
+### Opérateurs et expressions
+### Structures de contrôle (boucles, conditions)
+
+## Classes et Objets
+
+### Définition de classes et création d'objets
+### Constructeurs et méthodes
+### Encapsulation et modificateurs d'accès
+
+## Héritage et polymorphisme
+
+### Concepts d'héritage et de polymorphisme
+### Classes abstraites et interfaces
+### Surcharge et redéfinition de méthodes
+
+## Gestion des exceptions
+
+### Introduction aux exceptions
+### Blocs try-catch-finally
+### Exceptions personnalisées
+
+## Collections et génériques
+
+### Introduction aux collections (List, Set, Map)
+### Utilisation des génériques
+### Classes utilitaires (Collections, Arrays)
+
+## Flux d'Entrée/Sortie (I/O)
+
+### Lecture et écriture de fichiers
+### Flux de données (InputStream, OutputStream)
+### Sérialisation et désérialisation
+
+## Concurrence et Multithreading
+
+### Introduction au multithreading
+### Création et gestion de threads
+### Synchronisation et classes concurrentes (CopyOnWriteArrayList, ConcurrentHashMap)
+
+## Bibliothèques Standard et API Java
+
+### Introduction aux bibliothèques standard de Java
+### Utilisation des API courantes (java.util, java.time, java.nio)
+### Gestion des dépendances avec Maven ou Gradle
+
+## Développement d'Applications de Bureau
+
+### Introduction à Swing et JavaFX
+### Création d'interfaces utilisateur graphiques (GUI)
+### Gestion des événements et des composants graphiques
+
+## Développement Web avec Java
+
+### Introduction aux servlets et JSP
+### Frameworks web (Spring MVC, JSF)
+### Déploiement d'applications web sur des serveurs (Tomcat, Jetty)
+
+## Accès aux Bases de Données avec JDBC
+
+### Introduction à JDBC
+### Connexion et interaction avec une base de données
+### Gestion des transactions et des pools de connexions
+
+## Frameworks et ORM
+### Introduction aux ORM (Hibernate, JPA)
+### Mapping objet-relationnel
+### Gestion des entités et des relations
+
+## Développement d'Applications RESTful
+
+### Introduction aux services web REST
+### Création d'API REST avec Spring Boot
+### Consommation de services web REST
+
+## Sécurité des Applications Java
+
+### Introduction à la sécurité des applications Java
+### Authentification et autorisation
+### Protection contre les vulnérabilités courantes (injection SQL, XSS)
+
+## Projet de Développement Logiciel en Java
+
+### Réalisation d'un projet de développement logiciel en groupe
+### Application des concepts appris tout au long du cours
+### Présentation et évaluation du projet
+
+## Microservices et Architecture Modulaire
+
+### Introduction aux microservices
+### Conception et développement de microservices avec Spring Boot
+### Communication entre microservices (REST, gRPC)
+
+## Développement Mobile avec Java
+
+### Introduction à Android et Kotlin
+### Développement d'applications mobiles avec Android Studio
+### Intégration de services backend avec des applications mobiles
+
+## Tests et Qualité du Code
+
+### Introduction aux tests unitaires et d'intégration (JUnit, TestNG)
+### Tests de performance et de charge
+### Outils de qualité du code (SonarQube, Checkstyle)
+
+## Déploiement et DevOps
+
+### Introduction aux pratiques DevOps
+### Déploiement continu et intégration continue (CI/CD)
+### Outils de déploiement (Docker, Kubernetes, Jenkins)
