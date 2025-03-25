@@ -80,7 +80,7 @@ d'exécution.
 
 ### Concurrence
 
-La concurrence (ou "concurrency" en anglais) est un concept général qui fait référence à la capacité d'un système à
+La concurrence est un concept général qui fait référence à la capacité d'un système à
 gérer plusieurs tâches en même temps. Cela inclut non seulement le multithreading, mais aussi d'autres formes de
 parallélisme comme le multiprocessus, les coroutines, et les tâches asynchrones.
 L'objectif principal de la concurrence est de permettre une meilleure utilisation des ressources du système et d'
