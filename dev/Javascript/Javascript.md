@@ -1,5 +1,9 @@
 # Javascript
 
+[Chaîne Youtube From scratch](https://www.youtube.com/watch?v=Ew7KG2j8eII)
+
+[Tutoriel Pierre Giraud](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/)
+
 ## Les variables
 
 ### Déclaration avec 'var'
@@ -325,6 +329,15 @@ function multiplication(a, b) {
 multiplication(2, 10);
 ```
 
+```
+function add(a, b) {
+  return a + b;
+}
+const v1 = add(1, 2);
+const v2 = add(4, 5);
+console.log(add(v1, v2)); // affiche 12
+```
+
 ### Lambda Expressions
 
 ```
@@ -332,6 +345,22 @@ const addition = (a, b) => {
   return a + b;
 };
 console.log(addition(2, 10));
+```
+
+## Les objets
+
+```
+const object = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 35,
+  height: 1.80,
+  weight: 75,
+  imc : () => {
+  return object.weight / (object.height * object.height);
+  }
+}
+console.log(object.imc()); // affiche 23.15
 ```
 
 ## La portée des variables
@@ -349,11 +378,112 @@ Une variable définie dans l’espace global d’un script va être accessible �
 fonction. En revanche, une variable définie dans une fonction n’est accessible que dans cette même fonction et ne peut
 pas être manipulée depuis l’espace global du script.
 
-## Le DOM
+## Le Document Object Model (DOM)
 
 Le Document Object Model est une interface de programmation qui permet à des scripts d'examiner et de modifier le
 contenu du navigateur Web. Par le DOM, la composition d'un document HTML est représentée sous forme d'un jeu d'objets -
 lesquels peuvent représenter une fenêtre, une phrase ou un style, par exemple - reliés selon une structure en arbre.
+![](images/DOM.png)
+
+Le nœud racine est le noeud _html_.
+
+### Ajouter une classe de style à un nœud
+
+Supposons que nous ayons défini cette classe CSS
+
+```
+.question-click {
+    background: rgb(47,47,47);
+    border-radius: 30px;
+    border: 6px dashed pink;
+}
+```
+
+Pour ajouter cette classe au nœud myNode
+
+```
+myNode.classList.add("question-click");
+```
+
+### Retirer une classe de style d'un nœud
+
+Pour retirer la classe du nœud myNode
+
+```
+myNode.classList.remove("question-click");
+```
+
+Pour ajouter la classe si elle n'est pas associée au nœud et pour la retirer si elle est déjà associée :
+
+```
+myNode.classList.toggle("question-click");
+```
+
+## CSS
+
+### Gestion des priorités
+
+La spécificité des sélecteurs joue un rôle crucial. Voici l'ordre de spécificité des sélecteurs du plus faible au plus
+élevé :
+
+- Sélecteurs de type (par exemple, div, p)
+- Sélecteurs de classe (par exemple, .classname)
+- Sélecteurs d'attribut (par exemple, [type="text"])
+- Sélecteurs d'ID (par exemple, #idname)
+- Sélecteurs inline (par exemple, `<div style="color: red;">`)
+
+## Gestion des événements
+
+### addEventListener
+
+```
+button.addEventListener("click", () => {
+  alert("click");
+});
+```
+
+## Browser Object Model (BOM)
+
+![BOM](images/BOM.jpg)
+
+### window object
+
+represents the browser window
+
+some methods :
+
+* alert
+* confirm
+* prompt
+* setTimeout
+* setInterval
+
+#### location object
+
+#### history object
+
+#### location object
+
+some methods :
+
+* replace
+  Redirige vers l'URL indiquée
+
+```
+location.replace("http://lemonde.fr");
+```
+
+#### navigator object
+
+some methods :
+
+* userAgent
+
+#### document object
+
+## setProperty
+
+
 
 
 
