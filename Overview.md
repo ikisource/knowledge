@@ -70,6 +70,10 @@ peuvent être bloqués en attente de réponses.
 - Asynchrone : la communication asynchrone permet une meilleure utilisation des ressources, car les processus peuvent 
 continuer à fonctionner pendant que les messages sont en transit ou en attente de traitement.
 
+# Développement
+
+## Récursivité
+
 
 
 

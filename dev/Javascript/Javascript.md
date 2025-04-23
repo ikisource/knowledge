@@ -363,6 +363,62 @@ const object = {
 console.log(object.imc()); // affiche 23.15
 ```
 
+## Prototype
+
+En JavaScript, un prototype est un mécanisme fondamental qui permet aux objets d'hériter de propriétés et de méthodes
+d'autres objets. Chaque fonction en JavaScript a une propriété appelée prototype, qui est un objet auquel des propriétés
+et des méthodes peuvent être ajoutées. Lorsqu'une fonction est utilisée comme un constructeur (avec le mot-clé new),
+l'objet créé hérite des propriétés et des méthodes du prototype de cette fonction.
+
+```
+let str = "Bonjour";
+String.prototype.hello = () => {
+  return "Hello";
+};
+console.log(str, str.hello()); // affiche Bonjour Hello
+```
+
+## Les itérateurs
+
+### forEach
+
+```
+const tab = [1, 2, 3, 42];
+tab.forEach((elem) => {
+  console.log(elem); // affiche les élements du tableau
+});
+```
+
+### map
+
+```
+const tab = [1, 2, 3, 42];
+const tab2 = tab.map((elem) => {
+  return elem + 1;
+});
+console.log(tab2); // affiche Array(4) [ 2, 3, 4, 43 ]
+```
+
+### filter
+
+```
+const tab = [1, 2, 3, 42];
+const filtered = tab.filter((elem) => {
+  return elem < 10;
+});
+console.log(filtered); // affiche Array(4) [ 2, 3, 4]
+```
+
+### reduce
+
+```
+const tab = [1, 2, 3, 42];
+const reduced = tab.reduce((acc, element) => {
+return acc + element;
+}, 0);
+console.log(reduced); // affiche 48
+```
+
 ## La portée des variables
 
 La portée d’une variable désigne l’espace du script dans laquelle elle va être accessible.
@@ -483,8 +539,131 @@ some methods :
 
 ## setProperty
 
+## try catch
 
+```
+try {
+  if (tab[4]) console.log("OK");
+  else throw new Error("wrong");
+} catch (error) {
+  console.error(error);
+}
+console.log("ça marche encore");
+```
 
+## Recursivité
 
+```
+const tab = [1, 2, 3, 42];
+const sum = (table, i) => {
+if (!tab[i]) return 0;
+else return tab[i] + sum(table, i + 1);
+};
+console.log(sum(tab, 0)); // affiche 48
+```
 
+## Node.js
+
+Node.js est un environnement d'exécution JavaScript côté serveur. Il permet aux développeurs d'utiliser JavaScript pour
+écrire des scripts côté serveur
+
+Installer Node.js à partir de ce site [Node.js](https://nodejs.org)
+
+Définir le chemin vers le répertoire de Node.js dans le fichier _.bashrc_
+
+Lancer la commande `node -v` dans le terminal
+
+## Babel
+
+[Babel](https://babeljs.io/) est un compilateur JavaScript
+
+Créer un répertoire projet, par exemple `/home/olivier/dev/Javascript/node/`
+
+Se placer dans le répertoire `node`
+
+Exécuter la commande
+
+```
+npm init -y
+```
+
+puis la commande
+
+```
+npm install --save-dev babel-cli
+```
+
+Le fichier `package.json` a la structure suivante :
+
+```
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
+```
+
+Modifier le fichier comme ceci
+
+```
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
+```
+
+Lancer la commande
+
+```
+npm run start
+```
+
+Voici le résultat
+
+```
+> node@1.0.0 start
+> node test.js
+
+Hello world !
+```
+
+Modifier le fichier comme ceci pour utiliser Babel à la place de Node
+
+```
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "start": "babel-node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
 
