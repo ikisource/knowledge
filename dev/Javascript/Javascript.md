@@ -4,6 +4,8 @@
 
 [Tutoriel Pierre Giraud](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/)
 
+[Elephorm](https://www.elephorm.com/formation/code-data/javascript/apprendre-javascript-es6-les-fondamentaux/comprendre-lasynchronisme-en-javascript?fullscreen=1)
+
 ## Les variables
 
 ### Déclaration avec 'var'
@@ -120,6 +122,13 @@ var phrase = "Je m'appelle Olivier." // ça marche aussi avec des guillements si
 var phrase = 'Je m\'appelle Olivier.' // échappement du caractère de fermeture de la chaine
 ```
 
+#### Template string
+
+```
+const func = (index) => index + 1;
+console.log(`FUNC ${func(9)}`); // affiche FUNC 10
+```
+
 #### Concaténation de chaînes de caractères
 
 ```
@@ -218,6 +227,68 @@ console.log(total); // affiche 20
 let total = 10;
 total /= 4;
 console.log(total); // affiche 2.5
+```
+
+#### Spread operator
+
+Le spread operator (opérateur de décomposition) en JavaScript est représenté par trois points (...) et permet de
+décomposer les éléments d'un tableau ou les propriétés d'un objet. Il est très utile pour manipuler des structures de
+données de manière concise et élégante.
+
+```
+// Décomposition dans un nouveau tableau
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5, 6];
+console.log(arr2); // [1, 2, 3, 4, 5, 6]
+
+// Passage d'éléments d'un tableau à une fonction
+const numbers = [1, 2, 3];
+console.log(Math.max(...numbers)); // 3
+```
+
+```
+// Copie de tableaux
+const original = [1, 2, 3];
+const copy = [...original];
+console.log(copy); // [1, 2, 3]
+```
+
+```
+// Décomposition d'objets
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };
+console.log(obj2); // { a: 1, b: 2, c: 3 }
+
+```
+
+```
+// Fusion d'objets
+const objA = { x: 1, y: 2 };
+const objB = { y: 3, z: 4 };
+const merged = { ...objA, ...objB };
+console.log(merged); // { x: 1, y: 3, z: 4 }
+```
+
+```
+// Passage de propriétés d'objet à une fonction
+const params = { x: 1, y: 2, z: 3 };
+function multiply(x, y, z) {
+  return x * y * z;
+}
+console.log(multiply(...params)); // NaN (car les propriétés ne sont pas passées correctement)
+
+// Correct usage with object destructuring
+function multiply({ x, y, z }) {
+  return x * y * z;
+}
+console.log(multiply(params)); // 6
+```
+
+```
+// Utilisation dans les littéraux de tableau et d'objet
+const parts = ['shoulders', 'knees'];
+const lyrics = ['head', ...parts, 'and', 'toes'];
+console.log(lyrics); // ["head", "shoulders", "knees", "and", "toes"]
 ```
 
 ## Structures de contrôle
@@ -376,6 +447,48 @@ String.prototype.hello = () => {
   return "Hello";
 };
 console.log(str, str.hello()); // affiche Bonjour Hello
+```
+
+## Destructuring
+
+```
+const dog = {
+  name: "medor",
+  age: 11,
+  color: "brown",
+};
+
+const func = (animal) =>
+  `
+Je suis ${animal.name},
+j'ai ${animal.age} ans,
+ma couleur est le ${animal.color}
+`;
+
+const func2 = (animal) => {
+  const { name, age, color } = animal;
+  return `
+  Je suis ${name},
+  j'ai ${age} ans,
+  ma couleur est le ${color}
+  `;
+};
+
+const destrucured = ({ name, age, color }) => `
+  Je suis ${name},
+  j'ai ${age} ans,
+  ma couleur est le ${color}
+  `;
+
+console.log(func(dog));
+console.log(func2(dog));
+console.log(destrucured(dog));
+
+// pour un tableau
+const tab = [1, 4, 7];
+const [one, two] = tab;
+console.log(one); // affiche 1
+console.log(two); // affiche 4
 ```
 
 ## Les itérateurs
@@ -666,4 +779,177 @@ Modifier le fichier comme ceci pour utiliser Babel à la place de Node
     "babel-cli": "^6.26.0"
   }
 }
+```
+
+## import, export
+
+modules.js
+
+```
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
+
+export { add, sub };
+```
+
+test.js
+
+```
+import { add, sub } from "./modules.js";
+
+console.log(add(1, 2)); // 3
+console.log(sub(10, 2)); // 8
+
+```
+
+## Classes
+
+En JavaScript, une classe est un modèle pour créer des objets. Elle définit une structure et un comportement communs que
+tous les objets créés à partir de cette classe partageront. Les classes en JavaScript ont été introduites dans
+ECMAScript 2015 (ES6) et offrent une syntaxe plus claire et plus concise pour créer des objets et définir leur
+comportement.
+
+```
+class Dog {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+
+  print() {
+    console.log({
+      name: this.name,
+      age: this.age,
+      color: this.color,
+    });
+  }
+}
+
+class RedMedor extends Dog {
+  wouf() {
+    console.log("Wouf! Wouf!");
+  }
+}
+
+const medor = new Dog("Medor", 8, "brown");
+medor.print();
+
+const redMedor = new RedMedor("Medor", 8, "red");
+redMedor.print();
+redMedor.wouf();
+```
+
+## Asynchronisme
+
+```
+const func = () => console.log("bonsoir");
+setTimeout(func, 3000); // asynchrone
+console.log("bonjour");
+```
+
+L'exécution de ce programme affiche tout d'abord 'bonjour', puis 3s après 'bonsoir'
+
+### Promesse (Promise)
+
+En JavaScript, une promesse (ou Promise) est un objet qui représente la réussite ou l'échec éventuel d'une opération
+asynchrone. Les promesses permettent de gérer les opérations asynchrones de manière plus propre et plus lisible, en
+évitant l'utilisation de callbacks imbriqués (souvent appelés "callback hell").
+
+```
+const promise = () =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("bonsoir");
+      resolve("OK");
+    }, 2000);
+  });
+
+promise().then((res) => {
+  console.log("bonjour", res);
+});
+```
+
+L'exécution de ce programme affiche tout d'abord 'bonsoir', puis 2s après 'bonjour OK'
+
+```
+const promise = (index) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(index * 10);
+    }, 2000);
+  });
+
+const tab = [1, 2, 3, 4];
+
+const promises = Promise.all(tab.map((el) => promise(el)));
+promises.then((elements) => {
+  console.log(elements); // [ 10, 20, 30, 40 ]
+});
+```
+
+### async 
+
+```
+const promise = (index) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(index * 10);
+    }, 2000);
+  });
+
+const test = async () => {
+  const value = await promise(10);
+  console.log(value);
+};
+
+test();
+console.log("bonjour");
+```
+L'exécution de ce programme affiche tout d'abord 'bonjour', puis 2s après '100'
+
+## Récupérer des données
+
+```
+const url = "https://thejsway-server.herokuapp.com/api/articles";
+
+fetch(url)
+  .then((result) => result.json())
+  .then((json) => {
+    console.log(json);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+```
+
+```
+const main = document.getElementById("main");
+
+const url = "https://thejsway-server.herokuapp.com/api/articles";
+
+fetch(url)
+  .then((result) => result.json())
+  .then((json) => {
+    json.forEach(({ id, title, content }) => {
+      const div = document.createElement("div");
+      const h2 = document.createElement("h2");
+      const p = document.createElement("p");
+
+      const nTitle = document.createTextNode(`${id} - ${title}`);
+      const nContent = document.createTextNode(content);
+
+      main.appendChild(div);
+      div.appendChild(h2);
+      div.appendChild(p);
+
+      h2.appendChild(nTitle);
+      p.appendChild(nContent);
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+```
+
 
