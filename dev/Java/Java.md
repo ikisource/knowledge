@@ -243,6 +243,28 @@ comme _synchronized_, _ReentrantLock_, ou les classes de _java.util.concurrent_.
 
 ### Outils de déploiement (Docker, Kubernetes, Jenkins)
 
+## Alternatives Java sous Linux
+
+### Lister les alternatives
+
+```
+sudo update-alternatives --config java
+```
+
+### Ajouter une alternative
+
+```
+sudo update-alternatives --install /usr/bin/java java /opt/java-21/bin/java 1
+sudo update-alternatives --install /usr/bin/java java /opt/Java/jdk-17.0.12/bin/java 1
+
+```
+
+### Supprimer une alternative
+```
+update-alternatives --remove java /opt/Java/jdk-17.0.2/bin/java
+```
+
 ## Liens Github
 
 [Programmation concurrente](https://github.com/ikisource/concurrency)
+
