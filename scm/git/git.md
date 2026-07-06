@@ -230,7 +230,21 @@ merge.
 
 git pull = git fetch + git merge
 
-## Supprimer un commit
+## Les commits
+Les objets techniques Git sont stockés dans le répertoire `.git/objects/`
+
+
+### Afficher un commit
+```
+git show <commit hash>
+```
+
+### Afficher le contenu d'un commit
+```
+git cat-file -p <commit hash>
+```
+
+### Supprimer un commit
 
 ```
 git reset --hard <commit hash>
@@ -240,6 +254,12 @@ git reset --hard <commit hash>
 
 ```
 git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head
+```
+
+## revert un commit
+```
+git revert <id_commit>
+git push
 ```
 
 ## Liens

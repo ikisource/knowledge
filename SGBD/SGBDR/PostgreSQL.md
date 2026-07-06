@@ -1,11 +1,38 @@
 # PostgreSQL
 
-## Create a user
+## Se connecter à Postgresql
 
-```CREATE USER <user> WITH PASSWORD <password>;```
+```
+sudo -u postgres psql
+```
 
-## Connect to a database
-```\connect <database_name>```
+## Créer un utilisateur
 
-## Show tables
+```
+CREATE USER <user> WITH PASSWORD <password>;
+```
+ex : CREATE USER commerce WITH PASSWORD 'commerce';
+
+
+## Créer une nouvelle base
+
+```
+CREATE DATABASE <ma_base>;
+```
+ex: CREATE DATABASE commerce OWNER commerce;
+
+## Se connecter à une base
+
+```
+\connect <database_name>
+```
+
+## Afficher les tables
+
 ```\dt```
+
+## Aficher les utilisateurs
+```
+SELECT usename AS utilisateur FROM pg_user;
+```
+
