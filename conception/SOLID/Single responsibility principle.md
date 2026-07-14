@@ -1,57 +1,144 @@
 # Single responsibility principle
 
-A class should have only one reason to change.  
-To be more precise a class should be responsible to one, and only one actor. (Robert C. Martin)
+*Principe de responsabilité unique* — le **S** de l'acronyme **SOLID**.
 
+## Définition
+
+> Une classe ne devrait avoir qu'une seule raison de changer.
+
+*(Citation originale : « A class should have only one reason to change. »)*
+
+- **Créateur** : Robert C. Martin (« Uncle Bob »).
+- **Date d'apparition** : formulé à la fin des années 1990 dans ses articles sur les principes de conception orientée objet, puis publié dans *Agile Software Development, Principles, Patterns, and Practices* (2002). L'acronyme SOLID, qui regroupe ce principe avec quatre autres, a été proposé par Michael Feathers vers 2004.
+
+La « responsabilité » n'est pas une action, c'est une **raison de changer**, c'est-à-dire un acteur (métier, technique, organisationnel) susceptible de demander une évolution du code. Robert C. Martin a d'ailleurs reformulé plus tard le principe ainsi : *« Un module ne devrait être responsable que devant un seul et unique acteur. »*
+
+## Objectif
+
+- **Limiter l'impact des changements** : une modification demandée par un acteur ne doit pas déstabiliser le code utilisé par un autre acteur.
+- **Éviter le couplage accidentel** entre des préoccupations qui n'ont pas de rapport (règles métier, persistance, présentation, journalisation…).
+- **Faciliter les tests** : une classe avec une seule responsabilité a peu de dépendances et se teste unitairement sans infrastructure.
+- **Améliorer la lisibilité et la réutilisabilité** : le nom de la classe décrit exactement ce qu'elle fait.
+- **Réduire les risques de régression** et les conflits lors des modifications simultanées par plusieurs développeurs.
+
+## Exemple (ce qu'il faut faire)
+
+Chaque classe a une seule raison de changer : la règle de calcul, le format de rapport, l'accès à la base.
+
+```java
+// Responsabilité : porter les données du domaine
+public class Employee {
+
+    private final String name;
+    private final Integer hoursWorked;
+    private final Double hourlyRate;
+
+    public Employee(String name, Integer hoursWorked, Double hourlyRate) {
+        this.name = name;
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public Double getHourlyRate() {
+        return hourlyRate;
+    }
+}
 ```
-public class Person {
+
+```java
+// Responsabilité : la règle de calcul du salaire (acteur : le service financier)
+public class PayCalculator {
+
+    public Double calculatePay(Employee employee) {
+        return employee.getHoursWorked() * employee.getHourlyRate();
+    }
+}
+```
+
+```java
+// Responsabilité : la mise en forme du rapport (acteur : le service RH)
+public class EmployeeReporter {
+
+    public String report(Employee employee, Double pay) {
+        return employee.getName() + " : " + pay + " €";
+    }
+}
+```
+
+```java
+// Responsabilité : la persistance (acteur : les architectes / DBA)
+public class EmployeeRepository {
+
+    public void save(Employee employee) {
+        // INSERT INTO employee ...
+    }
+}
+```
+
+```java
+public class Client {
+
+    public static void main(String[] args) {
+
+        Employee employee = new Employee("Alice", 35, 42.0);
+
+        PayCalculator calculator = new PayCalculator();
+        EmployeeReporter reporter = new EmployeeReporter();
+        EmployeeRepository repository = new EmployeeRepository();
+
+        Double pay = calculator.calculatePay(employee);
+        System.out.println(reporter.report(employee, pay));
+        repository.save(employee);
+    }
+}
+```
+
+Un changement de la formule de calcul ne touche que `PayCalculator`. Un changement du format du rapport ne touche que `EmployeeReporter`. Un changement de base de données ne touche que `EmployeeRepository`.
+
+## Contre exemple (ce qu'il ne faut pas faire)
+
+Une classe « fourre-tout » qui répond à trois acteurs différents : elle a trois raisons de changer.
+
+```java
+public class Employee {
 
     private String name;
-    private String birthdate;
-    private int size;
-    private int weigth;
+    private Integer hoursWorked;
+    private Double hourlyRate;
 
-    boolean isBirthday() {
-
-        LocalDate now = LocalDate.now();
-        LocalDate birthday = LocalDate.parse(birthdate);
-
-        return now.getMonth().equals(birthday.getMonth())
-                && now.getDayOfMonth() == birthday.getDayOfMonth();
+    public Employee(String name, Integer hoursWorked, Double hourlyRate) {
+        this.name = name;
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
     }
 
-    // Body Mass Index
-    int bmi() {
-        return weigth / (size * size);
+    // Raison de changer n°1 : les règles du service financier
+    public Double calculatePay() {
+        return hoursWorked * hourlyRate;
     }
 
-    Boolean isMassiveObese() {
-        return bmi() > 40;
-    }
-}
-```
-The class Person has two responsibilities : holding data and intrinsic methods, and managing health concerns
-
-Put the health in another class 
-```
-public class Health {
-
-    private Person person;
-
-    public int imc() {
-        return person.getWeigth() / (person.getSize() * person.getSize());
+    // Raison de changer n°2 : le format demandé par le service RH
+    public String report() {
+        return name + " : " + calculatePay() + " €";
     }
 
-    public Boolean isMassiveObese() {
-        return person.bmi() > 40;
+    // Raison de changer n°3 : la technologie de persistance
+    public void save() {
+        // Connexion JDBC, INSERT INTO employee ...
     }
 }
 ```
 
-## Benefits
-- low coupling
-- testability is better
-- readability is better
-- decrease conflict merges
-
-
+Les problèmes :
+- Le service RH demande un rapport en PDF → on modifie `Employee`, et on risque de casser le calcul du salaire utilisé par la paie.
+- Le passage de JDBC à JPA → on modifie `Employee`, qui est pourtant une classe de domaine.
+- La classe est impossible à tester unitairement sans base de données.
+- Les développeurs de trois équipes différentes modifient le même fichier : conflits garantis.
